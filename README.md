@@ -21,9 +21,38 @@ Ideally, using this repo as a template should give you the following for free:
 > [ ] A guide for publishing the package to PyPI
 > 
 
-# Recommended extensions setup:
+# Prerequisites
+
+For the best experience, you will need to have either the [asdf package manager](https://asdf-vm.com/guide/getting-started.html) or the [mise package manager](https://mise.jdx.dev/getting-started.html) installed on your system.
+
+Users who choose not to utilize asdf/mise and the Launch Makefile setup will need to install the [uv package manager](https://docs.astral.sh/uv/getting-started/installation/) to manage Python dependencies.
 
 # Recommended IDE Configuration
+
+> NOTE: This template repository is currently set up with VSCode in mind. We will likely need to find PyCharm equivalents for the IntelliJ crowd.
+
+
+This repository comes with configurations for VSCode, including an [extensions.json](./.vscode/extensions.json) file that recommends the installation of several extensions that make for a friendlier developer experience.
+
+## Format-on-save
+
+By default, VSCode doesn't perform any format-on-save operations, so we highly recommend performing the following steps:
+
+1. Using the command pallette (⌘+⇧+P), locate "Preferences: Open User Settings (JSON)" and select it.
+2. In the settings.json file that was opened, configure the following items:
+
+```json
+{
+    <existing configuration>,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+}
+    
+```
 
 # Post-template setup
 
@@ -35,4 +64,4 @@ Ideally, using this repo as a template should give you the following for free:
 
 - project.name
 - project.description
-- tool.setuptools.package-dir (replace `hello` with your module name from step #2)
+- tool.setuptools.package-dir (replace `hello` with your module name/path from step #2)
