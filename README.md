@@ -23,6 +23,8 @@ This repository contains a reference Python module. Use this skeleton when you w
 - [asdf](https://github.com/asdf-vm/asdf) or [mise](https://mise.jdx.dev/) to manage dependencies
 - [make](https://www.gnu.org/software/make/)
 
+> NOTE: The workflows in this repository are designed around the target repository being publicly visible. These workflows will require adjustments to work with a private or internal repository.
+
 ### Applying the Template
 
 The easiest way to get started is to click the **Use this template** button from the GitHub code page and select **Create a new repository**. Choose the owner of the new repository and give it a name and description. 
