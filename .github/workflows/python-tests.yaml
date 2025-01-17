@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+        # Adjust the matrix to test against different or multiple versions.
+        # Note that adding more versions will result in a code coverage report 
+        # for each version; you may wish to adjust that step's behavior.
+        python-version: ["3.11"] 
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
