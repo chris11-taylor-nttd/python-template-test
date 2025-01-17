@@ -34,9 +34,9 @@ jobs:
     - name: Test with pytest
       run: |
         uv run pytest
-    - name: Report Coverage
-      if: github.event_name == 'pull_request'
-      uses: romeovs/lcov-reporter-action@v0.3.1
+    - name: Report coverage
+      uses: MishaKav/pytest-coverage-comment@main
       with:
-        lcov-file: htmlcov/lcov.info
-        delete-old-comments: true
+        pytest-xml-coverage-path: ./htmlcov/coverage.xml
+        remove-link-from-badge: true
+        unique-id-for-comment: ${{ matrix.python-version }}
