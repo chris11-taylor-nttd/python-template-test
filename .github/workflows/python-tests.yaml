@@ -38,5 +38,6 @@ jobs:
       uses: MishaKav/pytest-coverage-comment@main
       with:
         pytest-xml-coverage-path: ./htmlcov/coverage.xml
+        title: Coverage report for Python ${{ matrix.python-version }}
         remove-link-from-badge: true
         unique-id-for-comment: ${{ matrix.python-version }}
