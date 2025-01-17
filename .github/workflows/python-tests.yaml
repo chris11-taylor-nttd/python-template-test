@@ -37,5 +37,5 @@ jobs:
     - name: Report Coverage
       uses: romeovs/lcov-reporter-action@v0.3.1
       with:
-        lcov-file: ./htmlcov/lcov.info
+        lcov-file: htmlcov/lcov.info
         delete-old-comments: true
