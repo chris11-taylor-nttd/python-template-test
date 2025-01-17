@@ -24,6 +24,8 @@ When a pull request is merged, the [Draft Release](.github/workflows/draft-relea
 
 Multiple pull requests can be merged to main and the draft release will keep track of all outstanding unreleased changes. Once you are ready to release a new version all the way to PyPI, you can perform a release.
 
+If you push a change directly to the `main` branch without using a pull request, a draft release will be created, but since there is no PR to associate, it will not contain any release notes. You will need to manually supply release information.
+
 ## Release
 
 To release all outstanding changes, navigate to the Release page, select the drafted release, and click the edit button (pencil icon). You may make adjustments to the release body at this time to better document the contents of the release or provide any additional relevant information. The initial release of a given repository defaults to tag `0.1.0` and you may adjust this tag from the edit page if desired. Once you are satisfied with the contents of your release and the tag to be created, click **Publish release**. 
