@@ -4,7 +4,7 @@ from hello import hello
 
 
 class TestHello:
-    def test_hellomain_no_arguments(self, capsys):
+    def test_hello_main_no_arguments(self, capsys):
         """Test the happy path of the main function, where no arguments are passed."""
         hello.main()
         captured = capsys.readouterr()
