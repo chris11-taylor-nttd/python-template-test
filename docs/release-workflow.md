@@ -26,7 +26,7 @@ Multiple pull requests can be merged to main and the draft release will keep tra
 
 ## Release
 
-To release all outstanding changes, navigate to the Release page, select the drafted release, and click the edit button (pencil icon). You may make adjustments to the release body at this time to better document the contents of the release or provide any additional relevant information. Once you are satisfied with the contents, click **Publish release**. 
+To release all outstanding changes, navigate to the Release page, select the drafted release, and click the edit button (pencil icon). You may make adjustments to the release body at this time to better document the contents of the release or provide any additional relevant information. The initial release of a given repository defaults to tag `0.1.0` and you may adjust this tag from the edit page if desired. Once you are satisfied with the contents of your release and the tag to be created, click **Publish release**. 
 
 Upon publishing the release, a new tag will be created in the repository at the head of the main branch, and the [Release to PyPI](.github/workflows/release.yaml) workflow will begin. 
 
