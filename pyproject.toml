@@ -4,7 +4,7 @@ version = "0.0.0" # This will be set dynamically from release tags, changing thi
 description = "Add your description here"
 readme = "README.md"
 license = {text = "Apache 2.0"}
-requires-python = ">=3.11"
+requires-python = ">=3.11" # If you adjust this, you will need to adjust the python-tests workflow accordingly.
 # Add your dependencies to this project by using `uv add <package>`.
 dependencies = []
 

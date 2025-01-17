@@ -61,6 +61,12 @@ Setting up a runnable script is not in scope for this repository as it is concer
 
 As a fallback, you may also activate the virtual environment directly and use the `python3` command, but the use of `uv run` is highly recommended as it will ensure your runtime environment is isolated and your project dependencies are up-to-date when run.
 
+### Running tests
+
+This repository comes with a default configuration for pytest.
+
+To execute tests with the project's dependencies, issue the `uv run pytest` command. You may use the `pytest` command directly only if you activate a virtual environment.
+
 ### Further reading
 
 - [Set up VSCode](./docs/ide-vscode.md) for an improved development experience
