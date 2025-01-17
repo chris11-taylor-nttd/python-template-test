@@ -1,67 +1,68 @@
-# python-template-test
+# lcaf-skeleton-python-module
 
-Testing GitHub Repository Template functionality with an eye toward standardizing our approach with Python.
+## Overview
 
-Ideally, using this repo as a template should give you the following for free:
+This repository contains a reference Python module. Use this skeleton when you want to create a standalone publishable package for reuse with other Python code.
 
-> [x] Enough of a file structure so that users can infer where they need to put their code, tests, etc.
-> 
-> [x] Basic unit tests to guide testing patterns
-> 
-> [ ] Workflows to handle unit testing on push to the repo
-> 
-> [x] `uv` support
-> 
-> [x] A reasonable starting place for the pyproject.toml file
-> 
-> [ ] A README file the details what to do after you've cloned the repo
-> 
-> [ ] Variants for CLI tools and APIs (check out Typer to see if it'll meet needs, if so, FastAPI is probably the way to go)
-> 
-> [ ] A guide for publishing the package to PyPI
-> 
+### Features
 
-# Prerequisites
+- Modern package and environment management with `uv`
+- Automatic release drafting based on merged pull requests
+- Automatic version bumps, tags, and publish to PyPI on release -- simply set your draft to published
+- Integrated testing with `pytest`:
+    - Sensible default `pytest` configurations
+    - Pre-commit hooks to trigger tests before pushing
+    - Code coverage checking
+    - GitHub workflow
+- Recommended plugins file for VSCode
 
-For the best experience, you will need to have either the [asdf package manager](https://asdf-vm.com/guide/getting-started.html) or the [mise package manager](https://mise.jdx.dev/getting-started.html) installed on your system.
+## How to use this repository
 
-Users who choose not to utilize asdf/mise and the Launch Makefile setup will need to install the [uv package manager](https://docs.astral.sh/uv/getting-started/installation/) to manage Python dependencies.
+### Prerequisites
 
-# Recommended IDE Configuration
+- [asdf](https://github.com/asdf-vm/asdf) or [mise](https://mise.jdx.dev/) to manage dependencies
+- [make](https://www.gnu.org/software/make/)
 
-> NOTE: This template repository is currently set up with VSCode in mind. We will likely need to find PyCharm equivalents for the IntelliJ crowd.
+### Applying the Template
 
+The easiest way to get started is to click the **Use this template** button from the GitHub code page and select **Create a new repository**. Choose the owner of the new repository and give it a name and description. 
 
-This repository comes with configurations for VSCode, including an [extensions.json](./.vscode/extensions.json) file that recommends the installation of several extensions that make for a friendlier developer experience.
+Alternately, you can consume this template by starting the New Repository workflow and selecting this repository from the **Repository template** dropdown.
 
-## Format-on-save
+Either method will result in GitHub copying the contents of this repository into a new repository for you.
 
-By default, VSCode doesn't perform any format-on-save operations, so we highly recommend performing the following steps:
+### Post-Template Setup
 
-1. Using the command pallette (⌘+⇧+P), locate "Preferences: Open User Settings (JSON)" and select it.
-2. In the settings.json file that was opened, configure the following items:
+1. Clone this repository to a machine that meets the [prerequisites](#prerequisites).
 
-```json
-{
-    <existing configuration>,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.organizeImports": "explicit"
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff"
-}
-    
-```
+2. Run `asdf install` (or `mise install`) to install any needed dependencies on your system.
 
-# Post-template setup
+3. Run `make configure` to download the Launch platform components and initialize the pre-commit hooks.
 
-1. Run `uv sync` to install any needed dependencies on your system.
+4. Run `uv sync` to synchronize dependencies declared in `pyproject.toml` to your local machine.
 
-2. Rename the existing folder at `src/hello` to the name of your choosing. You should pay attention to PEP-8's [package and module naming guidelines](https://peps.python.org/pep-0008/#package-and-module-names) as well as the [broader guidelines found in PEP-423](https://peps.python.org/pep-0423/#overview).
+5. Rename the existing folder at `src/hello` to the name of your choosing. You should pay attention to PEP-8's [package and module naming guidelines](https://peps.python.org/pep-0008/#package-and-module-names) as well as the [broader guidelines found in PEP-423](https://peps.python.org/pep-0423/#overview).
 
-3. Update the contents of `pyproject.toml` with the appropriate values for your project. At a minimum, you should be updating the following fields:
+6. Update the contents of `pyproject.toml` with the appropriate values for your project. At a minimum, you should be updating the following fields:
 
-- project.name
+- project.name (be sure you adhere to [PEP-423](https://peps.python.org/pep-0423/)'s naming standards)
 - project.description
 - tool.setuptools.package-dir (replace `hello` with your module name/path from step #2)
+
+7. Replace README.md contents with your desired verbiage. README.md is published to PyPI and should reflect your module's information rather than this template information.
+
+### Running your code
+
+Using `uv run` to launch your code ensures that your code runs in an isolated environment. For more inforamtion about using `uv run`, see the [official documentation](https://docs.astral.sh/uv/concepts/projects/run/).  
+
+Modules can be directly executed by issuing `uv run path/to/file.py`, which will set \_\_name\_\_ to "\_\_main\_\_" as per Python's usual calling semantics. 
+
+Setting up a runnable script is not in scope for this repository as it is concerned with reusable modules, but further information about setting entrypoints can be found [here](https://docs.astral.sh/uv/concepts/projects/config/#entry-points).
+
+As a fallback, you may also activate the virtual environment directly and use the `python3` command, but the use of `uv run` is highly recommended as it will ensure your runtime environment is isolated and your project dependencies are up-to-date when run.
+
+### Further reading
+
+- [Set up VSCode](./docs/ide-vscode.md) for an improved development experience
+- [Set up PyPI](./docs/pypi-configuration.md) for package distribution
+- Learn how the [release workflows](./docs/release-workflow.md) operate
