@@ -69,6 +69,11 @@ This repository comes with a default configuration for pytest.
 
 To execute tests with the project's dependencies, issue the `uv run pytest` command. You may use the `pytest` command directly only if you activate a virtual environment.
 
+After you have run `make configure` during the initial setup, two targets are available as shortcuts:
+
+- `make test` will run `uvx run pytest`
+- `make coverage` will run `make test`, generate coverage reports, and then open the HTML version of the coverage report in a browser for ease of use.
+
 ## Further reading
 
 - [Set up VSCode](./docs/ide-vscode.md) for an improved development experience
