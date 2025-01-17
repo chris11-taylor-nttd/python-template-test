@@ -23,6 +23,8 @@ This repository contains a reference Python module. Use this skeleton when you w
 - [asdf](https://github.com/asdf-vm/asdf) or [mise](https://mise.jdx.dev/) to manage dependencies
 - [make](https://www.gnu.org/software/make/)
 
+> NOTE: The workflows in this repository are designed around the target repository being publicly visible. These workflows will require adjustments to work with a private or internal repository.
+
 ### Applying the Template
 
 The easiest way to get started is to click the **Use this template** button from the GitHub code page and select **Create a new repository**. Choose the owner of the new repository and give it a name and description. 
@@ -60,6 +62,12 @@ Modules can be directly executed by issuing `uv run path/to/file.py`, which will
 Setting up a runnable script is not in scope for this repository as it is concerned with reusable modules, but further information about setting entrypoints can be found [here](https://docs.astral.sh/uv/concepts/projects/config/#entry-points).
 
 As a fallback, you may also activate the virtual environment directly and use the `python3` command, but the use of `uv run` is highly recommended as it will ensure your runtime environment is isolated and your project dependencies are up-to-date when run.
+
+### Running tests
+
+This repository comes with a default configuration for pytest.
+
+To execute tests with the project's dependencies, issue the `uv run pytest` command. You may use the `pytest` command directly only if you activate a virtual environment.
 
 ### Further reading
 

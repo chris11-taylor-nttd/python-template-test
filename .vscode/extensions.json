@@ -3,6 +3,7 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "charliermarsh.ruff",
-        "njpwerner.autodocstring"
+        "njpwerner.autodocstring",
+        "tamasfe.even-better-toml"
     ]
 }
