@@ -69,7 +69,7 @@ This repository comes with a default configuration for pytest.
 
 To execute tests with the project's dependencies, issue the `uv run pytest` command. You may use the `pytest` command directly only if you activate a virtual environment.
 
-### Further reading
+## Further reading
 
 - [Set up VSCode](./docs/ide-vscode.md) for an improved development experience
 - [Set up PyPI](./docs/pypi-configuration.md) for package distribution
