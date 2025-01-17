@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   build:
@@ -32,4 +33,9 @@ jobs:
         uv sync
     - name: Test with pytest
       run: |
-        pytest --cov --cov-fail-under=80
+        uv run pytest
+    - name: Report Coverage
+      uses: romeovs/lcov-reporter-action@v0.3.1
+      with:
+        lcov-file: ./htmlcov/lcov.info
+        delete-old-comments: true

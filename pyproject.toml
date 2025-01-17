@@ -23,7 +23,7 @@ license-files = [] # Workaround for https://github.com/astral-sh/uv/issues/9513
 [tool.pytest.ini_options]
 pythonpath = "src"
 minversion = "8.0"
-addopts = "-ra --cov=src --cov-fail-under=80 --no-cov-on-fail --cov-report term --cov-report html"
+addopts = "-ra --cov=src --cov-fail-under=80 --no-cov-on-fail --cov-report term --cov-report html --cov-report lcov:htmlcov/cov.info"
 testpaths = [
     "test"
 ]
